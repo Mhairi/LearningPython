@@ -1,0 +1,25 @@
+print - prints something, needs double or single quotation marks
+# (hash) - allows for comments
++ - * / - math symbols do what they do
+<= >= - greater than or less than; tests value and returns TRUE or FALSE
+, (comma) - breaks up print instructions and allows you to put in actual variables (put before and after the variable)
+% (percent) - used at the end of the print quotes to represent the substituted variable (e.g., what goes in for %r)
+%s - string
+%d - number thing
+() - parentheses; start a list of variables, separated by commas
+\n - backslash something - does something with the printed line (in this case, line break)
+\t - inserts a tab
+raw_input() - collects input from the user, and saves it as a variable
+from - from a place, (like sys) do something
+sys - place with system variables
+import - the function to import variables
+argv - an argument - can be defined in the script, or by user input (e.g., raw_input()). can be more than one thing, separated by commas
+open() - opens a file
+txt.read() - .read() is a function, and txt is the variable. runs the function read() on txt
+truncate() - a function you assign to a file, like txt.truncate(). deletes the contents the file
+write() - function that writes
+close() - function that closes the file, run on a variable - like txt.close()
+len() - returns the length of the file
+exists() - returns TRUE or FALSE whether the file exists
+def - defines a function
+* - asterix - allows for vague functions to be defined? in the original paranthesis
