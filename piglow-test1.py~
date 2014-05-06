@@ -1,0 +1,5 @@
+from pyglow import PyGlow # imports PyGlow module
+from time import sleep
+
+pyglow = PyGlow() # defines pyglow as the function PyGlow
+pyglow.all(0) # sets all lights off
