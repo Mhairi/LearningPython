@@ -1,0 +1,4 @@
+120.67892694473267
+1.8877880573272705
+The participant made 2 mistakes.
+The participant's lowest number was 1751.
