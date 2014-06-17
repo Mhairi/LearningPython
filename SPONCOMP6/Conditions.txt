@@ -1,0 +1,2 @@
+1 - 10: Best score in increasing "difficulty" (10 = lowest number)
+11 - 20: Last person's score in increasing "difficulty" (10 = lowest number)
