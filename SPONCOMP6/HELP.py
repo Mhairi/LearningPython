@@ -23,7 +23,7 @@ while counter != 0: # while counter is not zero
         timing = timefinish - timestart
         timestart = time.time()
         with open('%r.txt' % subid, 'a') as timingfile:
-            timingfile.write("%r CORRECT\n" % timing)
+            timingfile.write("%r CORRECT %r \n" % (timing, number))
         counter = counter - increment # updates counter
         if counter < lowcounter: # tests to see if this is participant's best score
             lowcounter = counter # if so, takes note of that value
@@ -42,7 +42,7 @@ while counter != 0: # while counter is not zero
         timing = timefinish - timestart
         timestart = time.time()
         with open('%r.txt' % subid, 'a') as timingfile:
-            timingfile.write("%r MISTAKE\n" % timing)
+            timingfile.write("%r MISTAKE %r \n" % (timing, number))
 
 print "Please inform the experimenter that you have finished with the task."
 raw_input("Press enter to quit.")
