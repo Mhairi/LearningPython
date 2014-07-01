@@ -6,7 +6,7 @@ increment = 3 # increment value
 mistakes = 0 # mistake counter
 lowcounter = start - increment # score counter
 counter = start - increment # counter for the function
-print "[Last Person's Best: 1948] Please count backwards from 2023 to 0 in 3-step sequences: "
+print "[Last Person's Best: 1873] Please count backwards from 2023 to 0 in 3-step sequences: "
 timestart = time.time()
 
 while counter != 0: # while counter is not zero
@@ -15,10 +15,10 @@ while counter != 0: # while counter is not zero
             number = int(raw_input(">"))
             break
         except: # if not
-            print "[Last Person's Best: 1948] Only numbers are valid."        
+            print "[Last Person's Best: 1873] Only numbers are valid."        
     if counter == number: # if participant types in the correct answer
         print "\n" * 80 # spacer to clear screen
-        print "[Last Person's Best: 1948] Next: " 
+        print "[Last Person's Best: 1873] Next: " 
         timefinish = time.time()
         timing = timefinish - timestart
         timestart = time.time()
@@ -35,8 +35,8 @@ while counter != 0: # while counter is not zero
             timingfile.write("The participant's lowest number was %d." % (lowcounter + increment))
     else:
         print "\n" * 80 # spacer to clear screen
-        print "[Last Person's Best: 1948] Stop - mistake - your last number was %r: " % (counter + increment)
-        counter = counter # resets counter
+        print "[Last Person's Best: 1873] Stop - mistake - start over at 2023 please: "
+        counter = start - increment # resets counter
         mistakes = mistakes + 1 # adds one to mistake counter
         timefinish = time.time()
         timing = timefinish - timestart

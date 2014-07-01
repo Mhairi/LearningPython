@@ -35,8 +35,8 @@ while counter != 0: # while counter is not zero
             timingfile.write("The participant's lowest number was %d." % (lowcounter + increment))
     else:
         print "\n" * 80 # spacer to clear screen
-        print "[Today's Best: 1948] Stop - mistake - start over at 2023 please: "
-        counter = start - increment # resets counter
+        print "[Today's Best: 1948] Stop - mistake - your last number was %r: " % (counter + increment)
+        counter = counter # resets counter
         mistakes = mistakes + 1 # adds one to mistake counter
         timefinish = time.time()
         timing = timefinish - timestart
