@@ -1,0 +1,8 @@
+def LongestWord(sen): 
+    temp = sen
+    temp = "".join([c for c in temp if c not in ('(', ')', '?', ':', ';', ',', '.', '!', '/', '"', "'")])
+    words = temp.split()
+    print max(words, key = len)
+    return
+    
+LongestWord(raw_input())  
