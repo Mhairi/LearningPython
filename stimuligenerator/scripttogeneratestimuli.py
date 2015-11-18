@@ -9,11 +9,11 @@ stimuliarray.append(['Self favoring', '','Other favoring',''])
 for i in xrange(1,41): #40 for self vs. other
     stimuliarray.append(sg.GenerateSelf()+sg.GeneratePartner())   
     
-stimuliarray.append(['Self favoring', '','Group favoring',''])
+stimuliarray.append(['Group favoring', '','Self favoring',''])
 for i in xrange(1,41): #40 for self vs. group 
     stimuliarray.append(sg.GenerateGroupvsSelf()[0]+sg.GenerateGroupvsSelf()[1])
 
-stimuliarray.append(['Other favoring','', 'Group favoring',''])
+stimuliarray.append(['Group favoring','', 'Other favoring',''])
 for i in xrange(1,41): #40 for other vs. group 
     stimuliarray.append(sg.GenerateGroupvsPartner()[0] + sg.GenerateGroupvsPartner()[1])
                   
