@@ -1,5 +1,10 @@
-from Tkinter import * #This is the GUI that comes with python
-import tkMessageBox as mbox #For our mssage box later
+#We have a try and except here because for whatever reason, Tkinter was renamed to tkinter in python 3
+try:
+	from Tkinter import * #This is the GUI that comes with python
+	import tkMessageBox as messagebox #For our mssage box later
+except ImportError: #if python 3
+	from tkinter import *
+	from tkinter import messagebox
 
 class TwoWay(Frame):
     def __init__(self,parent): #Initializes when run
@@ -124,7 +129,7 @@ class TwoWay(Frame):
         FInteraction = SSInteraction/MSE
          
         #Displays a message box with our results."
-        mbox.showinfo( "Results", "FRows = %s \nFColumns = %s \nFInteraction %s" % (FRows, FColumns, FInteraction))
+        messagebox.showinfo( "Results", "FRows = %s \nFColumns = %s \nFInteraction %s" % (FRows, FColumns, FInteraction))
         
     def centerWindow(self):
         #We do this to center the window in the screen
