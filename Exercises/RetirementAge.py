@@ -40,6 +40,16 @@ class RetirementCalc(Frame):
         self.expensesinput = Entry(inputframe, width = 10)
         self.expensesinput.grid(row=1, column = 1)
      
+        agelabel = Label(inputframe, text = "Age")
+        agelabel.grid(row = 2, column = 0)
+        self.ageinput = Entry(inputframe, width = 10)
+        self.ageinput.grid(row = 2, column = 1)
+     
+        lifeexpectancylabel = Label(inputframe, text = "Life Expectancy")
+        lifeexpectancylabel.grid(row = 3, column = 0)
+        self.lifeexpectancyinput = Entry(inputframe, width = 10)
+        self.lifeexpectancyinput.grid(row = 3, column =1)
+         
         buttonframe = Frame(self)
         buttonframe.grid(row = 1, column = 0)
         
@@ -49,8 +59,25 @@ class RetirementCalc(Frame):
     def calculate(self):
         income = float(self.incomeinput.get())
         expenses = float(self.expensesinput.get())
+        age = float(self.ageinput.get()) * 12
+        lifeexpectancy = float(self.lifeexpectancyinput.get()) * 12
         
-        messagebox.showinfo("Results", [income, expenses])
+        savings = income - expenses #Every month we save this much
+        workingmonths = 0
+
+        excess = 10
+        bank = 9
+        
+        while excess > bank:
+            workingmonths = workingmonths + 1
+            age += 1 #we age by one more month
+            monthstogo = (lifeexpectancy - age)
+            excess = monthstogo * expenses  
+            bank = savings * workingmonths #every month, we pay off some of that life debt
+        
+        workingyears = workingmonths/12
+                
+        messagebox.showinfo("Results", workingyears)
      
 def main(): #This is our "main" function
     root = Tk() #initialize Tkinter
