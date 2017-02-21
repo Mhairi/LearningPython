@@ -3,6 +3,7 @@ import os
 #rootdir = 'C:/Users/Bryan/Desktop/MT_corrected'
 rootdir = os.getcwd()
 
+
 def self_chips(line):
     pid = ""
     answer = ""
@@ -13,20 +14,8 @@ def self_chips(line):
             answer = answer + char
     return [pid, answer]
 
-def oth_chips(line):
-    pid = ""
-    answer = ""
-    for i, char in enumerate(line):
-        if i <= 6:
-            pid = str(pid) + str(char)
-        if i > 74 and i < 78:
-            answer = answer + char
-    return answer
-    
-def all_participant_colors(rootdir):
-    pid = []
+def all_participant_colors(rootdir):    
     participant_colors = []
-    partner_colors = []
     
     for subdir, dirs, files in os.walk(rootdir):
         for file in files:
@@ -34,19 +23,12 @@ def all_participant_colors(rootdir):
         
             for i, line in enumerate(file_name):
                 try:
-                    if i > 4 and i < 75 and line[23] == 'Y':
-                        pid.append(self_chips(line)[0])
-                        participant_colors.append(self_chips(line)[1])
+                    if i > 4 and i < 75 and line[23] == 'Y':  
+                        participant_colors.append(self_chips(line))
                 except IndexError:
                     pass
-                try:
-                    if i > 4 and i < 75 and line[28] == 'P':  
-                        partner_colors.append(oth_chips(line))
-                except IndexError:
-                    pass
-            
             file_name.close()
-    return zip(pid, participant_colors, partner_colors)
+    return participant_colors
 
 
 hopefully_this_works = all_participant_colors(rootdir)
